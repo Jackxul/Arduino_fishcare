@@ -1,4 +1,4 @@
-# Arduino_fishcare
+# Arduino fishcare
 A fish tank water cooling system
 
 # System Behavior
