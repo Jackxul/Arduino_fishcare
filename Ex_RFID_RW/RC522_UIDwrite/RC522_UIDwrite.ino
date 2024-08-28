@@ -33,7 +33,7 @@
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance
 
 /* Set your new UID here! */
-#define NEW_UID {0x35, 0x73, 0x3A, 0x3F}
+#define NEW_UID {0x35, 0x73, 0x3A, 0x3F} //35-73-3A-3F 周詩梵UID
 
 MFRC522::MIFARE_Key key;
 

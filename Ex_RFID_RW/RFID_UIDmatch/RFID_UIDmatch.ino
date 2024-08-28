@@ -114,6 +114,7 @@ void loop() {
           word.toUpperCase();
           lcd.print(word);
           lcd.print(" ");
+          Serial.print(word);
       }
       delay(1000);
 
