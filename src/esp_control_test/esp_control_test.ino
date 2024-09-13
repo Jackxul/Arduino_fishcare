@@ -1,4 +1,5 @@
 #include <OneWire.h> 
+#include <ESP8266WiFi.h>
 #include <DallasTemperature.h> 
 #define DQ_Pin 2  
 
@@ -7,10 +8,19 @@ DallasTemperature sensors(&oneWire);
 
 void setup(void)
 {
+  // Set WiFi to station mode
+  WiFi.mode(WIFI_STA);
   Serial.begin(9600);
+
   pinMode(7,OUTPUT);
   pinMode(4,OUTPUT); //風扇
   sensors.begin();
+
+  WiFi.mode(WIFI_STA);
+
+  // Disconnect from an AP if it was previously connected
+  WiFi.disconnect();
+  delay(100);
 }
 
 void loop(void)
