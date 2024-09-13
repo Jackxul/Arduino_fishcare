@@ -32,19 +32,29 @@ void setup(void)
   pinMode(7,OUTPUT); //Tec-12708
   pinMode(4,OUTPUT); //Cpu Tower Fan
   sensors.begin(); //initialize ds18b20(TO-92 package) sensor
-
+  digitalWrite(7,HIGH);
+  digitalWrite(4,HIGH);
   setupTimer();     // Initialize the timer interrupt
 }
 
 void loop(void)
 {
-  if(TempC > 25){
-    digitalWrite(4,HIGH);
-    digitalWrite(7,HIGH);
-  }else{
-    digitalWrite(7,LOW);
-    digitalWrite(4,LOW);
-  }
+	if(TempC > 18){
+    		digitalWrite(4,HIGH);
+    		digitalWrite(7,HIGH);
+    		if(TempC > 24){
+      			//alert and noitfication
+    		}
+	}
+  	}else if(TempC < 14){
+	    	digitalWrite(7,LOW);
+	    	digitalWrite(4,LOW);
+		if(TempC < 7){
+			//alert and noitfication
+		}
+	}else{
+		//do nothing(Temperature is in the range of 14-18) ==> Keep the status of the devices
+	}
 }
 
 ISR(TIMER1_COMPA_vect) {
