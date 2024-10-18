@@ -1,2 +1,4 @@
 #ignore files listed in .gitignore
 ./*/passwords.h
+./*/pswd.h
+./src/esp_control_test/pswd.h
